@@ -1,0 +1,68 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Majestic Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="adminassets/template/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="adminassets/template/vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="adminassets/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="adminassets/template/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="adminassets/template/images/favicon.png" />
+</head>
+
+<section>
+  <div class=" container row">
+    <div class="ml-5 col-md-6">
+      <h2 class="text-center mt-5"> edit products</h2>
+      <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+        <label for="">Name</label>
+        <input type="text" name="name" class="form-control" value="{{product.name}}">
+
+        <label for="">Description</label>
+        <input type="text" name="description" class="form-control" value="{{product.description}}">
+
+        <label for="">Price</label>
+        <input type="Number" name="price" class="form-control" value="{{product.price}}">
+<div class=" addInput">
+                <select id="product_categorie" name="category" class="text-success"
+                    data-container="body">
+                    <option style="text-primary" disabled selected value><H2>CATEGORY</H2></option>
+                    {{#each category}}
+                    <option  value="{{this.categoryData.category}}">{{this.categoryData.category}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+        <label for="">Image</label>
+        <img src="/product-images/{{product._id}}.jpg" style="width :100px; height:auto"
+        <input type="file" name="image" class="form-control">
+
+        <button type="submit" class="btn btn-success mt-4">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+
+ <script src="adminassets/template/vendors/chart.js/Chart.min.js"></script>
+  <script src="adminassets/template/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="adminassets/template/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="adminassets/template/js/off-canvas.js"></script>
+  <script src="adminassets/template/js/hoverable-collapse.js"></script>
+  <script src="adminassets/template/js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="adminassets/template/js/dashboard.js"></script>
+  <script src="adminassets/template/js/data-table.js"></script>
+  <script src="adminassets/template/js/jquery.dataTables.js"></script>
+  <script src="adminassets/template/js/dataTables.bootstrap4.js"></script>
+  

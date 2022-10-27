@@ -1,0 +1,55 @@
+<section style="margin-left: 175px;">
+  {{!-- <div style="height: 200px; width:100%;"></div> --}}
+<div class="container">
+
+    <div class="row">
+      <div class="preview col-md-6">
+        <a href="/admin/add-allProject" class="btn btn-success ">add all projects</a>
+    </div>  
+<table class="table-responsive" style="width:100%;" id="productsTable">
+  <thead>
+    <tr>
+      <th scope="col">no.</th>
+      <th scope="col">name</th>
+     
+      <th scope="col">imge</th>
+      <th scope="col">options</th>
+    </tr>
+  </thead>
+  <tbody> {{#each project}}
+    <tr>
+      <th scope="row">{{inc1 @index}}</th>
+      <td>{{this.name}}</td>
+     
+      <td ><img style="width:;70px;height:50px" src="/allProject/{{this._id}}.jpg"</td>
+      <td>
+         {{!-- <a href="/admin/edit-product?id={{this._id}}"class="btn btn-primary">Edit</a> --}}
+        <a href="/admin/delete-product/{{this._id}}"class="btn btn-danger" onclick="return confirm ('are you really want to delete{{this.name}} ? ')">Delete</a>
+     
+      </td>
+     
+    </tr>
+     {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+</section>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+        $('#usersTable').wrap('<div id="hide" style="display:none"/>');
+
+        $('#hide').css('display', 'block');
+    });
+
+
+    var table = $('#productsTable').DataTable();
+</script>
+
+

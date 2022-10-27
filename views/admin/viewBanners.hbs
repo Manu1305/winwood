@@ -1,0 +1,36 @@
+<section style="margin-left: 175px;">
+  {{!-- <div style="height: 200px; width:100%;"></div> --}}
+<div class="container">
+
+    <div class="row">
+      <div class="preview col-md-6">
+        <a href="/admin/add-banner" class="btn btn-success ">add banner</a>
+    </div>
+<table class="table" style="width:100%;" id="productsTable">
+  <thead>
+    <tr>
+      <th scope="col">no.</th>
+   
+      <th scope="col">imge</th>
+      <th scope="col">options</th>
+    </tr>
+  </thead>
+  <tbody> {{#each banner}}
+    <tr>
+      <th scope="row">{{inc1 @index}}</th>
+   
+      <td ><img style="width:;70px;height:50px" src="/bimages/{{this._id}}.jpg"</td>
+      <td>
+         
+        <a href="/admin/deleteBanner/{{this._id}}"class="btn btn-danger" onclick="return confirm ('are you really want to delete{{this.name}} ? ')">Delete</a>
+     
+      </td>
+     
+    </tr>
+     {{/each}}
+    
+  </tbody>
+</table>
+</div>
+</div>
+</section>

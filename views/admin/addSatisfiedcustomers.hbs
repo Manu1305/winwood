@@ -1,0 +1,91 @@
+
+<div class="preview col-md-6">
+        <a href="/admin/viewSatifiedcustomers" class="btn btn-success ">view customers</a>
+    </div>
+
+
+
+<section>
+   <div style="height: 200px; width:100%;"></div>
+  <div class=" container row">
+    <div class="ml-5 col-md-6">
+      <h2 class="text-center mt-5" >Add statisfaction</h2>
+      <form action="/admin/addSatisfaction" name="myform" method="post" enctype="multipart/form-data" onsubmit="return validateform()" >
+        <label for="">Heading</label>
+        <input type="text" name="name" class="form-control">
+
+        <label for="">Description</label>
+        <input type="text" name="description" class="form-control"> 
+
+         <label for="">Position</label>
+        <input type="text" name="position" class="form-control">
+        <label for=""><div class="dropdown">
+  <div class=" addInput">
+                {{!-- <select style="width:620px; height:50px;" id="product_categorie" name="category" class="text-success"
+                    data-container="body">
+                    <option style="text-primary; text-align: center;"  disabled selected value><H2>CATEGORY</H2></option>
+                    {{#each category}}
+                    <option  value="{{this.categoryData.category}}">{{this.categoryData.category}}</option>
+                    {{/each}}
+                </select> --}}
+            </div> 
+ 
+</div></label>
+       
+<div style="height:10px;"></div>
+        <label for="">Image</label>
+        <input type="file" name="image" class="form-control" required>
+
+        <button id="sweetalert" type="submit" class="btn btn-success mt-4"  >Submit</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var description=document.myform.description.value;  
+var price=document.myform.price.value
+var image=document.myform.image.value
+  
+if (name==null || name==""){  
+  swal.fire("Name cant be blank");  
+  return false;  
+}if(price==null|| price==""){  
+  swal.fire("add price");  
+  return false;  
+  }  
+  if(description.length<9){  
+    swal.fire("need more description");  
+  return false;  
+  }
+
+}  
+</script>
+
+
+ <!-- build:js assets/vendor/js/core.js -->
+    <script src="admintemp/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="admintemp/assets/vendor/js/bootstrap.js"></script>
+    <script src="admintemp/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="admintemp/assets/vendor/libs/popper/popper.js"></script>
+
+    <script src="admintemp/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="admintemp/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="admintemp/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="admintemp/assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
