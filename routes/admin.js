@@ -98,13 +98,13 @@ router.get('/viewAllproject', function(req, res, next) {
 
 
 const admindb = {
-  email: "manu@gmail.com",
-  password: 1305
+  username: "winwood",
+  password: 1234
 }
 
 router.post('/adminLogin', function (req, res) {
   res.header('Cache-control', 'no-cache,private, no-store, must-revalidate,max-stale=0,post-check=0')
-  if (req.body.email == admindb.email && req.body.password == admindb.password) {
+  if (req.body.email == admindb.username && req.body.password == admindb.password) {
     req.session.adminLoggedIn = true;
     res.redirect('/admin');
   } else {
